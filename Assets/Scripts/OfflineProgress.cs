@@ -1,8 +1,12 @@
 using UnityEngine;
 using System;
+using UnityEditor;
 using UnityEditor.UIElements;
+using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using static UnityEngine.UI.Text;
+using UnityEngine.SceneManagement;
 
 public class OfflineProgress : MonoBehaviour
 {
@@ -10,6 +14,7 @@ public class OfflineProgress : MonoBehaviour
     public Text time;
     public bool Startscreen;
     public Text gold;
+    public Button homeScreen;
     
     
     void Start()
@@ -40,11 +45,8 @@ public class OfflineProgress : MonoBehaviour
         PlayerPrefs.SetString("Last_Login", DateTime.Now.ToString());
     }
 
-    /*private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            Startscreen = true;
-        }
-    }*/
+
+    //homeScreen.onClick = SceneManager.LoadScene("Scenes/HomeScreen"); 
+    
+    
 }
