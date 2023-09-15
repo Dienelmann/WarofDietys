@@ -9,6 +9,7 @@ public class OfflineProgress : MonoBehaviour
     public Text Exp;
     public Text time;
     public bool Startscreen;
+    public Text gold;
     
     
     void Start()
@@ -21,12 +22,15 @@ public class OfflineProgress : MonoBehaviour
             
             time.text = String.Format("You were Offline for : " + "{0} Days {1} Hours {2} Minutes {3} seconds", timeSpan.Days, timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
 
-            Exp.text = (int)timeSpan.TotalMinutes + ("Exp");
+            Exp.text = (float)timeSpan.TotalMinutes + ("Exp");
+            
+            gold.text = (float)timeSpan.TotalMinutes + ("Gold");
         }
         else
         {
             time.text = "Welcome to War of Dietys";
             Exp.text = " ";
+            gold.text = " ";
         } 
         
     }
