@@ -669,6 +669,7 @@ MonoBehaviour:
   time: {fileID: 618754707}
   Startscreen: 0
   gold: {fileID: 1968180124}
+  homeScreen: {fileID: 1219711427}
 --- !u!114 &1222317138
 MonoBehaviour:
   m_ObjectHideFlags: 0
