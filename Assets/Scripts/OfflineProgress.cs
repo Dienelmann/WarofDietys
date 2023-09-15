@@ -8,6 +8,7 @@ public class OfflineProgress : MonoBehaviour
 {
     public Text Exp;
     public Text time;
+    public bool Startscreen;
     
     void Start()
     {
@@ -17,7 +18,7 @@ public class OfflineProgress : MonoBehaviour
 
             TimeSpan timeSpan = DateTime.Now - lastLogin;
             
-            time.text = String.Format("{0} Days {1} Hours {2} Minutes {3} seconnds", timeSpan.Days, timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
+            time.text = String.Format("{0} Days {1} Hours {2} Minutes {3} seconds", timeSpan.Days, timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
 
             Exp.text = (int)timeSpan.TotalMinutes + ("Exp");
         }
@@ -25,11 +26,20 @@ public class OfflineProgress : MonoBehaviour
         {
             time.text = "Welcome to War of Dietys";
             Exp.text = " ";
-        }
+        } 
+        
     }
 
     private void OnApplicationQuit()
     {
         PlayerPrefs.SetString("Last_Login", DateTime.Now.ToString());
     }
+
+    /*private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Startscreen = true;
+        }
+    }*/
 }
