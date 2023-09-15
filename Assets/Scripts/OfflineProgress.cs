@@ -10,6 +10,7 @@ public class OfflineProgress : MonoBehaviour
     public Text time;
     public bool Startscreen;
     
+    
     void Start()
     {
         if (PlayerPrefs.HasKey("Last_Login"))
@@ -18,7 +19,7 @@ public class OfflineProgress : MonoBehaviour
 
             TimeSpan timeSpan = DateTime.Now - lastLogin;
             
-            time.text = String.Format("{0} Days {1} Hours {2} Minutes {3} seconds", timeSpan.Days, timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
+            time.text = String.Format("You were Offline for : " + "{0} Days {1} Hours {2} Minutes {3} seconds", timeSpan.Days, timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
 
             Exp.text = (int)timeSpan.TotalMinutes + ("Exp");
         }
